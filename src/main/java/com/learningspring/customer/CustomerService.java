@@ -18,11 +18,11 @@ public class CustomerService {
         return customerDao.selectAllCustomers();
     }
 
-    public Customer getCustomerById(Integer id) {
-        return customerDao.selectCustomerById(id)
+    public Customer getCustomerById(Integer customerId) {
+        return customerDao.selectCustomerById(customerId)
                 .orElseThrow(() -> new ResourceNotFound(
                         "Customer with ID [%s] was not found."
-                                .formatted(id)));
+                                .formatted(customerId)));
     }
 
 }
