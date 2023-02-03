@@ -20,9 +20,7 @@ public class CustomerService {
 
     public Customer getCustomerById(Integer customerId) {
         return customerDao.selectCustomerById(customerId)
-                .orElseThrow(() -> new ResourceNotFound(
-                        "Customer with ID [%s] was not found."
-                                .formatted(customerId)));
+                .orElseThrow(() -> new ResourceNotFound("Customer with ID [%s] was not found.".formatted(customerId)));
     }
 
 }
